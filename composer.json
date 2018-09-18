@@ -1,0 +1,41 @@
+{
+    "name": "shearer2001/baidu-aip-php",
+    "description": "Baidu Aip SDK for PHP",
+    "keywords": [
+        "aip",
+        "baidu",
+        "sdk"
+    ],
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+    {
+        "name": "Jimmie Liu",
+        "homepage": "http://www.felis.cn"
+    }],
+    "support":
+    {
+        "issues": "https://github.com/shearer2001/baidu-aip-php/issues"
+    },
+    "require":
+    {
+        "php": ">=5.3.3",
+        "psr/log": "^1.0.0",
+        "guzzle/guzzle": "~3.9"
+    },
+    "suggest":
+    {
+        "monolog/monolog": "Adds support for logging HTTP requests and responses"
+    },
+    "require-dev":
+    {
+        "monolog/monolog": "~1.4"
+    },
+    "autoload":
+    {
+        "psr-0":
+        {
+            "BaiduAip": "src/"
+        }
+    }
+}
