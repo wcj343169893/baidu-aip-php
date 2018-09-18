@@ -14,7 +14,8 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-namespace BaiduAip\Lib;
+
+namespace Sobyte\BaiduAip\Lib;
 
 /**
  * Aip Base 基类
@@ -70,7 +71,7 @@ class AipBase
         $this->secretKey = trim($secretKey);
         $this->isCloudUser = null;
         $this->client = new AipHttpClient();
-        $this->version = '2_2_3';
+        $this->version = '2_2_7';
         $this->proxies = array();
     }
 

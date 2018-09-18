@@ -14,14 +14,16 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-namespace BaiduAip;
+
+namespace Sobyte\BaiduAip;
+
+use Sobyte\BaiduAip\Lib\AipBase;
 
 /**
  * 百度语音
  */
-class AipSpeech extends Lib\AipBase
+class AipSpeech extends AipBase
 {
-
     /**
      * url
      * @var string

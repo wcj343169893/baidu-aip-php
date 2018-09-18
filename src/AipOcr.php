@@ -14,9 +14,12 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-namespace BaiduAip;
 
-class AipOcr extends Lib\AipBase
+namespace Sobyte\BaiduAip;
+
+use Sobyte\BaiduAip\Lib\AipBase;
+
+class AipOcr extends AipBase
 {
 
     /**

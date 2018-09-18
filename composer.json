@@ -1,5 +1,5 @@
 {
-    "name": "shearer2001/baidu-aip-php",
+    "name": "sobyte/baidu-aip",
     "description": "Baidu Aip SDK for PHP",
     "keywords": [
         "aip",
@@ -23,9 +23,9 @@
     },
     "autoload":
     {
-        "psr-0":
+        "psr-4":
         {
-            "BaiduAip": "src/"
+            "Sobyte\\BaiduAip\\": "src/"
         }
     }
 }

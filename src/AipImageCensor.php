@@ -15,14 +15,14 @@
  * the License.
  */
 
-namespace BaiduAip;
+namespace Sobyte\BaiduAip;
 
-require_once 'lib/AipBase.php';
+use Sobyte\BaiduAip\Lib\AipBase;
 
 /**
  * 黄反识别
  */
-class AipImageCensor extends Lib\AipBase
+class AipImageCensor extends AipBase
 {
 
     /**

@@ -15,9 +15,11 @@
  * the License.
  */
 
-namespace BaiduAip;
+namespace Sobyte\BaiduAip;
 
-class AipKg extends Lib\AipBase
+use Sobyte\BaiduAip\Lib\AipBase;
+
+class AipKg extends AipBase
 {
 
     /**

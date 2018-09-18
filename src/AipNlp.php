@@ -1,23 +1,26 @@
 <?php
 /*
-* Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
-*
-* Licensed under the Apache License, Version 2.0 (the "License"); you may not
-* use this file except in compliance with the License. You may obtain a copy of
-* the License at
-*
-* Http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
-* WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
-* License for the specific language governing permissions and limitations under
-* the License.
-*/
+ * Copyright (c) 2017 Baidu.com, Inc. All Rights Reserved
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * Http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
 
-namespace BaiduAip;
+namespace Sobyte\BaiduAip;
 
-class AipNlp extends Lib\AipBase {
+use Sobyte\BaiduAip\Lib\AipBase;
+
+class AipNlp extends AipBase
+{
 
     /**
      * 词法分析 lexer api url
@@ -86,11 +89,24 @@ class AipNlp extends Lib\AipBase {
     private $topicUrl = 'https://aip.baidubce.com/rpc/2.0/nlp/v1/topic';
 
     /**
+     * 文本纠错 ecnet api url
+     * @var string
+     */
+    private $ecnetUrl = 'https://aip.baidubce.com/rpc/2.0/nlp/v1/ecnet';
+
+    /**
+     * 对话情绪识别接口 emotion api url
+     * @var string
+     */
+    private $emotionUrl = 'https://aip.baidubce.com/rpc/2.0/nlp/v1/emotion';
+
+    /**
      * 格式化结果
      * @param $content string
      * @return mixed
      */
-    protected function proccessResult($content){
+    protected function proccessResult($content)
+    {
         return json_decode(mb_convert_encoding($content, 'UTF8', 'GBK'), true, 512, JSON_BIGINT_AS_STRING);
     }
 
@@ -102,10 +118,11 @@ class AipNlp extends Lib\AipBase {
      * @description options列表:
      * @return array
      */
-    public function lexer($text, $options=array()){
+    public function lexer($text, $options = array())
+    {
 
         $data = array();
-        
+
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
@@ -122,10 +139,11 @@ class AipNlp extends Lib\AipBase {
      * @description options列表:
      * @return array
      */
-    public function lexerCustom($text, $options=array()){
+    public function lexerCustom($text, $options = array())
+    {
 
         $data = array();
-        
+
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
@@ -143,10 +161,11 @@ class AipNlp extends Lib\AipBase {
      *   mode 模型选择。默认值为0，可选值mode=0（对应web模型）；mode=1（对应query模型）
      * @return array
      */
-    public function depParser($text, $options=array()){
+    public function depParser($text, $options = array())
+    {
 
         $data = array();
-        
+
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
@@ -163,10 +182,11 @@ class AipNlp extends Lib\AipBase {
      * @description options列表:
      * @return array
      */
-    public function wordEmbedding($word, $options=array()){
+    public function wordEmbedding($word, $options = array())
+    {
 
         $data = array();
-        
+
         $data['word'] = $word;
 
         $data = array_merge($data, $options);
@@ -183,10 +203,11 @@ class AipNlp extends Lib\AipBase {
      * @description options列表:
      * @return array
      */
-    public function dnnlm($text, $options=array()){
+    public function dnnlm($text, $options = array())
+    {
 
         $data = array();
-        
+
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
@@ -205,10 +226,11 @@ class AipNlp extends Lib\AipBase {
      *   mode 预留字段，可选择不同的词义相似度模型。默认值为0，目前仅支持mode=0
      * @return array
      */
-    public function wordSimEmbedding($word1, $word2, $options=array()){
+    public function wordSimEmbedding($word1, $word2, $options = array())
+    {
 
         $data = array();
-        
+
         $data['word_1'] = $word1;
         $data['word_2'] = $word2;
 
@@ -228,10 +250,11 @@ class AipNlp extends Lib\AipBase {
      *   model 默认为"BOW"，可选"BOW"、"CNN"与"GRNN"
      * @return array
      */
-    public function simnet($text1, $text2, $options=array()){
+    public function simnet($text1, $text2, $options = array())
+    {
 
         $data = array();
-        
+
         $data['text_1'] = $text1;
         $data['text_2'] = $text2;
 
@@ -250,10 +273,11 @@ class AipNlp extends Lib\AipBase {
      *   type 评论行业类型，默认为4（餐饮美食）
      * @return array
      */
-    public function commentTag($text, $options=array()){
+    public function commentTag($text, $options = array())
+    {
 
         $data = array();
-        
+
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
@@ -270,10 +294,11 @@ class AipNlp extends Lib\AipBase {
      * @description options列表:
      * @return array
      */
-    public function sentimentClassify($text, $options=array()){
+    public function sentimentClassify($text, $options = array())
+    {
 
         $data = array();
-        
+
         $data['text'] = $text;
 
         $data = array_merge($data, $options);
@@ -291,10 +316,11 @@ class AipNlp extends Lib\AipBase {
      * @description options列表:
      * @return array
      */
-    public function keyword($title, $content, $options=array()){
+    public function keyword($title, $content, $options = array())
+    {
 
         $data = array();
-        
+
         $data['title'] = $title;
         $data['content'] = $content;
 
@@ -313,10 +339,11 @@ class AipNlp extends Lib\AipBase {
      * @description options列表:
      * @return array
      */
-    public function topic($title, $content, $options=array()){
+    public function topic($title, $content, $options = array())
+    {
 
         $data = array();
-        
+
         $data['title'] = $title;
         $data['content'] = $content;
 
@@ -324,5 +351,48 @@ class AipNlp extends Lib\AipBase {
         $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
 
         return $this->request($this->topicUrl, $data);
+    }
+
+    /**
+     * 文本纠错接口
+     *
+     * @param string $text - 待纠错文本，输入限制511字节
+     * @param array $options - 可选参数对象，key: value都为string类型
+     * @description options列表:
+     * @return array
+     */
+    public function ecnet($text, $options = array())
+    {
+
+        $data = array();
+
+        $data['text'] = $text;
+
+        $data = array_merge($data, $options);
+        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+
+        return $this->request($this->ecnetUrl, $data);
+    }
+
+    /**
+     * 对话情绪识别接口接口
+     *
+     * @param string $text - 待识别情感文本，输入限制512字节
+     * @param array $options - 可选参数对象，key: value都为string类型
+     * @description options列表:
+     *   scene default（默认项-不区分场景），talk（闲聊对话-如度秘聊天等），task（任务型对话-如导航对话等），customer_service（客服对话-如电信/银行客服等）
+     * @return array
+     */
+    public function emotion($text, $options = array())
+    {
+
+        $data = array();
+
+        $data['text'] = $text;
+
+        $data = array_merge($data, $options);
+        $data = mb_convert_encoding(json_encode($data), 'GBK', 'UTF8');
+
+        return $this->request($this->emotionUrl, $data);
     }
 }
