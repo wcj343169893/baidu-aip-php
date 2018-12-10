@@ -15,9 +15,9 @@
  * the License.
  */
 
-namespace Sobyte\BaiduAip;
+namespace Mofing\BaiduAip;
 
-use Sobyte\BaiduAip\Lib\AipBase;
+use Mofing\BaiduAip\Lib\AipBase;
 
 class AipImageClassify extends AipBase
 {

@@ -1,31 +1,30 @@
 {
-    "name": "sobyte/baidu-aip",
-    "description": "Baidu Aip SDK for PHP",
-    "keywords": [
-        "aip",
-        "baidu",
-        "sdk"
-    ],
-    "type": "library",
-    "license": "Apache-2.0",
-    "authors": [
-    {
-        "name": "Jimmie Liu",
-        "homepage": "http://www.felis.cn"
-    }],
-    "support":
-    {
-        "issues": "https://github.com/shearer2001/baidu-aip-php/issues"
-    },
-    "require":
-    {
-        "php": ">=5.3.3"
-    },
-    "autoload":
-    {
-        "psr-4":
-        {
-            "Sobyte\\BaiduAip\\": "src/"
-        }
-    }
+	"name" : "mofing/baidu-aip",
+	"description" : "Baidu Aip SDK for PHP",
+	"keywords" : [
+		"aip",
+		"baidu",
+		"sdk"
+	],
+	"type" : "library",
+	"license" : "Apache-2.0",
+	"authors" : [{
+			"name" : "Jimmie Liu",
+			"homepage" : "http://www.felis.cn"
+		}, {
+			"name" : "wen chaojun",
+			"homepage" : "https://www.cjblog.org"
+		}
+	],
+	"support" : {
+		"issues" : "https://github.com/wcj343169893/baidu-aip-php"
+	},
+	"require" : {
+		"php" : ">=5.6.3"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Mofing\\BaiduAip\\" : "src/"
+		}
+	}
 }
